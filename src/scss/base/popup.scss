@@ -1,0 +1,125 @@
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 30px 10px;
+	transition: visibility 0.8s ease 0s;
+	visibility: hidden;
+	pointer-events: none;
+
+	// .popup_show
+	&_show {
+		z-index: 150;
+		visibility: visible;
+		overflow: auto;
+		pointer-events: auto;
+
+		// .popup__content
+		.popup__content {
+			visibility: visible;
+			transform: scale(1);
+		}
+	}
+
+	// .popup__wrapper
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		min-height: 100%;
+		flex: 1 1 auto;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	// .popup__content
+	&__content {
+		visibility: hidden;
+		transform: scale(0);
+		transition: transform 0.3s ease 0s;
+		background-color: $White;
+		@include adaptiveValue("padding", 40, 20, 1280, 992, 1);
+		width: 100%;
+		max-width: rem(744);
+		border-radius: rem(10);
+
+		.lock & {
+			visibility: visible;
+		}
+	}
+
+	// popup__close
+	&__close {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		@include adaptiveValue("right", 45, 14);
+		@include adaptiveValue("font-size", 22, 14);
+		line-height: 1;
+		color: rgba($color: $Black2, $alpha: 0.5);
+		background-color: transparent;
+		transition: $transition ease color 0s;
+
+		@media (min-width: $mobile) {
+			@include adaptiveValue("top", 40, 8);
+		}
+		@media (max-width: $mobile) {
+			top: rem(-16);
+			transform: translateY(-100%);
+			color: $White;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $Black2;
+			}
+		}
+
+		&::before {
+			content: "\e912";
+			@extend %ic;
+		}
+	}
+
+	// popup_video
+	&_video {
+		@media (max-width: $mobile) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.popup__content {
+			max-width: rem(1081);
+			@include adaptiveValue("padding-top", 85, 30);
+			@include adaptiveValue("padding-bottom", 85, 30);
+
+			@media (min-width: $mobile) {
+				@include adaptiveValue("padding-left", 80, 20);
+				@include adaptiveValue("padding-right", 80, 20);
+			}
+			@media (max-width: $mobile) {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+		.popup__text {
+			position: relative;
+			position: relative;
+			padding-bottom: percent(548, 921);
+
+			iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}

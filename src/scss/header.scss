@@ -1,0 +1,413 @@
+//header ====================================================================================================
+.header {
+	position: relative;
+	z-index: 1;
+
+	@media (min-width: $mobile) {
+		border-bottom: 1px solid rgba($color: $Black, $alpha: 0.25);
+	}
+	@media (max-width:$mobile){
+		 height: rem(56); 
+	}
+
+	.home & {
+		@media (min-width: $mobile) {
+			border-color: rgba($color: $White, $alpha: 0.5);
+		}
+		@media (min-width: $mobile) and (max-width: $tablet) {
+			.logo {
+				// .logo__image-dark
+				&__image-dark {
+					display: none;
+				}
+
+				// .logo__image-light
+				&__image-light {
+					display: block;
+				}
+			}
+
+			.icon-menu {
+				&::before,
+				&::after {
+					background-color: $White;
+				}
+
+				.menu-open & {
+					&::before,
+					&::after {
+						background-color: $Black2;
+					}
+				}
+			}
+		}
+	}
+
+	// .header__container
+	&__container {
+		@media (min-width: $tablet) {
+			display: grid;
+			grid-template-columns: percent(260, 1160) 1fr;
+		}
+		@media (max-width: $tablet) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	// .header__logo
+	&__logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		padding-top: rem(12);
+		padding-bottom: rem(12);
+
+		@media (min-width: $tablet) {
+			// background-color: $White;
+			padding: rem(10);
+		}
+	}
+
+	.logo {
+		// .logo__link
+		&__link {
+			@include adaptiveValue("max-width", 180, 95);
+
+			@media (max-width: $mobile) {
+				display: block;
+			}
+		}
+
+		// .logo__image-dark
+		&__image-dark {
+		}
+
+		// .logo__image-light
+		&__image-light {
+			// display: none;
+		}
+	}
+
+	// .header__body
+	&__body {
+		@media (min-width: $tablet) {
+			& > * {
+				@include adaptiveValue("padding-left", 56, 20, 1440, 992, 1);
+			}
+		}
+		@media (max-width: $tablet) {
+			position: fixed;
+			z-index: 2;
+			top: -100%;
+			left: 0;
+			right: 0;
+			background: $White;
+			height: 100%;
+			min-height: 100vh;
+			overflow-y: auto;
+			padding-top: rem(60);
+			padding-bottom: rem(32);
+			padding-left: rem(20);
+			padding-right: rem(20);
+			display: grid;
+			align-items: flex-start;
+			transition: 0.5s ease top 0s;
+
+			&::before {
+				content: "";
+				background: $White;
+				height: rem(60);
+				position: fixed;
+				z-index: 2;
+				top: -100%;
+				left: 0;
+				right: 0;
+				transition: 0.5s ease top 0s;
+			}
+
+			.menu-open & {
+				top: 0;
+
+				&::before {
+					top: 0;
+				}
+			}
+		}
+	}
+
+	// .header__top
+	&__top {
+		display: grid;
+		gap: rem(16);
+		position: relative;
+
+		@media (min-width: $tablet) {
+			padding-top: rem(14);
+			padding-bottom: rem(14);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+
+			&::before {
+				content: "";
+				position: absolute;
+				display: block;
+				height: 100%;
+				width: 300%;
+				background: rgba(42, 45, 49, 0.6);
+				pointer-events: none;
+				left: 0;
+			}
+		}
+		@media (max-width: $tablet) {
+			padding-left: rem(16);
+			padding-right: rem(16);
+		}
+	}
+
+	&__schedule,
+	&__contacts {
+		display: grid;
+		row-gap: rem(8);
+		@include adaptiveValue("column-gap", 56, 20, 1440, 992, 1);
+		position: relative;
+
+		@media (min-width: $tablet) {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			font-size: rem(12);
+			line-height: math.div(15, 12);
+			color: rgba($color: $White, $alpha: 0.5);
+		}
+		@media (max-width: $tablet) {
+			@include adaptiveValue("font-size", 14, 12, 992, 320, 1);
+			line-height: math.div(12, 10);
+		}
+	}
+
+	// .header__schedule
+	&__schedule {
+	}
+
+	// .header__schedule-item
+	&__schedule-item {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("column-gap", 20, 10, 1440, 992, 1);
+	}
+
+	// .header__contacts
+	&__contacts {
+	}
+
+	// .header__contact
+	&__contact {
+		display: flex;
+		align-items: center;
+
+		a {
+			display: flex;
+			align-items: center;
+			gap: rem(8);
+			letter-spacing: calc(12px * 0.1);
+			transition: $transition ease color 0s;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: $White;
+				}
+			}
+
+			&::before {
+				@media (min-width: $tablet) {
+					font-size: rem(13);
+				}
+				@media (max-width: $tablet) {
+					@include adaptiveValue("font-size", 16, 14, 992, 320, 1);
+				}
+			}
+		}
+	}
+
+	// .header__bottom
+	&__bottom {
+		@media (min-width: $tablet) {
+			padding-top: rem(30);
+			padding-bottom: rem(30);
+		}
+		@media (max-width: $tablet) {
+			max-width: rem(193);
+			padding-bottom: rem(52);
+			grid-row: 1/2;
+		}
+	}
+
+	// .header__menu
+	&__menu {
+		ul {
+			@media (min-width: $tablet) {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				column-gap: rem(16);
+				row-gap: rem(24);
+			}
+		}
+
+		li {
+			position: relative;
+
+			&.current-menu-item {
+				@media (min-width: $tablet) {
+					a {
+						opacity: 0.5;
+					}
+				}
+				@media (max-width: $tablet) {
+					&::before {
+						color: #282c38;
+					}
+
+					a {
+						font-weight: 600;
+						background: #eaecf2;
+					}
+				}
+			}
+
+			&::before {
+				display: none;
+
+				@media (max-width: $tablet) {
+					display: block;
+					font-size: rem(20);
+					color: #737a92;
+					position: absolute;
+					left: rem(16);
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+		}
+
+		a {
+			@media (min-width: $tablet) {
+				display: block;
+				font-weight: 600;
+				font-size: rem(14);
+				line-height: math.div(17, 14);
+				padding: rem(5);
+				margin: rem(-5);
+				color: $Black;
+				position: relative;
+				text-decoration: underline transparent from-font;
+				text-underline-offset: 3px;
+				transition: $transition ease text-decoration 0s;
+
+				@media (any-hover: hover) {
+					&:hover {
+						text-decoration: underline $Black from-font;
+					}
+				}
+
+				.home & {
+					color: $White;
+
+					@media (any-hover: hover) {
+						&:hover {
+							text-decoration: underline $White from-font;
+						}
+					}
+				}
+			}
+			@media (max-width: $tablet) {
+				display: block;
+				font-size: rem(14);
+				line-height: math.div(18, 13);
+				padding: rem(8) rem(16) rem(8) rem(52);
+				border-radius: rem(10);
+			}
+		}
+	}
+}
+
+//Burger
+.icon-menu {
+	display: none;
+
+	@media (max-width: $tablet) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(42);
+		padding-top: rem(12);
+		padding-bottom: rem(12);
+		cursor: pointer;
+		z-index: 5;
+
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(5);
+			border-radius: rem(9);
+			background-color: $Black2;
+		}
+		&::before {
+			top: rem(12);
+		}
+		&::after {
+			bottom: rem(12);
+		}
+
+		.menu-open & {
+			&::before,
+			&::after {
+				background-color: $Black2;
+			}
+
+			&::before {
+				top: calc(50% - rem(2));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(2));
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+	@media (max-width: $mobile) {
+		height: rem(36);
+
+		&::before,
+		&::after {
+			height: rem(2);
+		}
+		&::before {
+			top: rem(12);
+		}
+		&::after {
+			bottom: rem(12);
+		}
+
+		.menu-open & {
+			&::before {
+				top: calc(50% - rem(1));
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+			}
+		}
+	}
+}
