@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Main"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="archive-services">
+				<div class="archive-services__container">
+					<h2 class="archive-services__title">Услуги</h2>
+
+					<div class="archive-services__items">
+						<a href="services-single.html" class="archive-services__item service-item">
+							<div class="service-item__img"><img src="img/services/services-1-1.jpg" alt="" loading="lazy"></div>
+							<div class="service-item__caption">Вентиляция</div>
+						</a>
+						<a href="services-single.html" class="archive-services__item service-item">
+							<div class="service-item__img"><img src="img/services/services-2-1.jpg" alt="" loading="lazy"></div>
+							<div class="service-item__caption">Кондиционирование</div>
+						</a>
+						<a href="services-single.html" class="archive-services__item service-item">
+							<div class="service-item__img"><img src="img/services/services-3-1.jpg" alt="" loading="lazy"></div>
+							<div class="service-item__caption">Система увлажнения</div>
+						</a>
+						<a href="services-single.html" class="archive-services__item service-item">
+							<div class="service-item__img"><img src="img/services/services-4-1.jpg" alt="" loading="lazy"></div>
+							<div class="service-item__caption">Проектирование</div>
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('html/_head.htm',{
-"title":"Главная"
+"title":"Main"
 })
 
 <body class="home">
@@ -147,7 +147,7 @@
 						<h2>О системе</h2>
 						<p>SCS–это умная климатическая система, которая отвечает всем потребностям современного дома! <br> Мы занимаемся комплексом услуг по установке и автоматизации систем кондиционирования, вентиляции, увлажнения воздуха с управлением по технологии «УМНЫЙ ДОМ». Наша работа производится на всех этапах:</p>
 					</div>
-					<div class="about__button"><button type="button" data-popup="#video" data-popup-youtube="jE_uEXdyzxM" class="btn btn-border _icon-play">Смотреть видео</button></div>
+					<div class="about__button"><button type="button" data-popup="#video" data-popup-youtube="jE_uEXdyzxM" class="btn btn_border _icon-play">Смотреть видео</button></div>
 				</div>
 			</section>
 
@@ -286,156 +286,15 @@
 				</div>
 			</section>
 
-			<section class="manufacturers">
-				<div class="manufacturers__container">
-					<h2 class="manufacturers__title">Производители</h2>
+			@@include('html/manufacturers.htm',{})
 
-					<div class="manufacturers__items">
-						<a href="" class="manufacturers__item"><img src="img/manufacturers/manufacturers-1.jpg" alt="" loading="lazy"></a>
-						<a href="" class="manufacturers__item"><img src="img/manufacturers/manufacturers-2.jpg" alt="" loading="lazy"></a>
-						<a href="" class="manufacturers__item"><img src="img/manufacturers/manufacturers-3.jpg" alt="" loading="lazy"></a>
-						<a href="" class="manufacturers__item"><img src="img/manufacturers/manufacturers-4.jpg" alt="" loading="lazy"></a>
-						<a href="" class="manufacturers__item"><img src="img/manufacturers/manufacturers-5.jpg" alt="" loading="lazy"></a>
-						<a href="" class="manufacturers__item"><img src="img/manufacturers/manufacturers-6.jpg" alt="" loading="lazy"></a>
-					</div>
-				</div>
-			</section>
+			@@include('html/work-scheme.htm',{})
 
-			<section class="work-scheme">
-				<div class="work-scheme__container">
-					<h2 class="work-scheme__title">Схема работы</h2>
+			@@include('html/clients.htm',{})
 
-					<div class="work-scheme__items">
-						<div class="work-scheme__item work-item">
-							<div class="work-item__icon"><img src="img/icons/calculator.svg" alt="" loading="lazy"></div>
-
-							<div class="work-item__body">
-								<div class="work-item__step">01</div>
-								<h3 class="work-item__title">Предварительный расчёт</h3>
-								<div class="work-item__text _content">
-									<p>Наши специалисты сделают расчёт с учетом ваших пожеланий и в рамках бюджета</p>
-								</div>
-							</div>
-						</div>
-						<div class="work-scheme__item work-item">
-							<div class="work-item__icon"><img src="img/icons/interface.svg" alt="" loading="lazy"></div>
-
-							<div class="work-item__body">
-								<div class="work-item__step">02</div>
-								<h3 class="work-item__title">Проектирование</h3>
-								<div class="work-item__text _content">
-									<p>Для вас разработают весь проект в деталях, учитывая все нюансы</p>
-								</div>
-							</div>
-						</div>
-						<div class="work-scheme__item work-item">
-							<div class="work-item__icon"><img src="img/icons/settings-2.svg" alt="" loading="lazy"></div>
-
-							<div class="work-item__body">
-								<div class="work-item__step">03</div>
-								<h3 class="work-item__title">Монтажно и пуско наладочные работы</h3>
-								<div class="work-item__text _content">
-									<p>Наши специалисты выполнят работы высококачественно и в срок</p>
-								</div>
-							</div>
-						</div>
-						<div class="work-scheme__item work-item">
-							<div class="work-item__icon"><img src="img/icons/headphones.svg" alt="" loading="lazy"></div>
-
-							<div class="work-item__body">
-								<div class="work-item__step">04</div>
-								<h3 class="work-item__title">Сервис и поддержка</h3>
-								<div class="work-item__text _content">
-									<p>Гарантийное обслуживание и информационная поддержка по телефону 24/7</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="clients">
-				<div class="clients__container">
-					<div class="clients__slider swiper">
-						<div class="clients__heading">
-							<h2 class="clients__title">Наши клиенты</h2>
-
-							<div class="swiper__arrows">
-								<div class="swiper__button swiper__button-prev _icon-slider-arrow"></div>
-								<div class="swiper__button swiper__button-next _icon-slider-arrow"></div>
-							</div>
-						</div>
-						<div class="clients__wrapper swiper-wrapper">
-							<div class="clients__slide swiper-slide">
-								<a href="" class="clients__slide-image">
-									<img class="swiper-lazy" data-src="img/clients/client-1.jpg" alt="" loading="lazy">
-									<div class="swiper-lazy-preloader"></div>
-								</a>
-							</div>
-							<div class="clients__slide swiper-slide">
-								<a href="" class="clients__slide-image">
-									<img class="swiper-lazy" data-src="img/clients/client-2.jpg" alt="" loading="lazy">
-									<div class="swiper-lazy-preloader"></div>
-								</a>
-							</div>
-							<div class="clients__slide swiper-slide">
-								<a href="" class="clients__slide-image">
-									<img class="swiper-lazy" data-src="img/clients/client-3.jpg" alt="" loading="lazy">
-									<div class="swiper-lazy-preloader"></div>
-								</a>
-							</div>
-							<div class="clients__slide swiper-slide">
-								<a href="" class="clients__slide-image">
-									<img class="swiper-lazy" data-src="img/clients/client-4.jpg" alt="" loading="lazy">
-									<div class="swiper-lazy-preloader"></div>
-								</a>
-							</div>
-							<div class="clients__slide swiper-slide">
-								<a href="" class="clients__slide-image">
-									<img class="swiper-lazy" data-src="img/clients/client-5.jpg" alt="" loading="lazy">
-									<div class="swiper-lazy-preloader"></div>
-								</a>
-							</div>
-							<div class="clients__slide swiper-slide">
-								<a href="" class="clients__slide-image">
-									<img class="swiper-lazy" data-src="img/clients/client-6.jpg" alt="" loading="lazy">
-									<div class="swiper-lazy-preloader"></div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="applications">
-				<div class="applications__container">
-					<h2 class="applications__title">Сферы применения</h2>
-
-					<div class="applications__items">
-						<div class="applications__item application-card">
-							<div class="application-card__img"><img src="img/icons/business.svg" alt="" loading="lazy"></div>
-							<div class="application-card__body">
-								<div class="application-card__title">Жилые помещения:</div>
-								<div class="application-card__text">квартиры и частные дома</div>
-							</div>
-						</div>
-						<div class="applications__item application-card">
-							<div class="application-card__img"><img src="img/icons/factory.svg" alt="" loading="lazy"></div>
-							<div class="application-card__body">
-								<div class="application-card__title">Нежилые помещения:</div>
-								<div class="application-card__text">медицинские учреждения, офисы, магазины, гостиницы, рестораны, коммерческие помещения </div>
-							</div>
-						</div>
-						<div class="applications__item application-card">
-							<div class="application-card__img"><img src="img/icons/bank.svg" alt="" loading="lazy"></div>
-							<div class="application-card__body">
-								<div class="application-card__title">Инфраструктура:</div>
-								<div class="application-card__text">выставочные центры, музеи,галереи</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+			@@include('html/applications.htm',{
+			"title":"Сферы применения"
+			})
 
 			<section class="portfolio">
 				<div class="portfolio__container">
@@ -463,77 +322,149 @@
 				</div>
 			</section>
 
+			<section class="benefits">
+				<div class="benefits__container">
+					<h2 class="benefits__title">Почему выбирают нас</h2>
 
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
+					<div class="benefits__items">
+						<div class="benefits__item application-card">
+							<div class="application-card__img"><img src="img/icons/calculator-2.svg" alt="" loading="lazy"></div>
+							<div class="application-card__body">
+								<div class="application-card__title">Бесплатный расчёт</div>
+								<div class="application-card__text">Организация оперативного выезда к вам на объект, где в течение 30 минут специалисты сделают замеры и расчёт</div>
+							</div>
+						</div>
+						<div class="benefits__item application-card">
+							<div class="application-card__img"><img src="img/icons/documents.svg" alt="" loading="lazy"></div>
+							<div class="application-card__body">
+								<div class="application-card__title">Соблюдение ГОСТ и СНИП</div>
+								<div class="application-card__text">Все проектные и монтажные работы соблюдаются строго соответствуют требованиям ГОСТ и СНИП</div>
+							</div>
+						</div>
+						<div class="benefits__item application-card">
+							<div class="application-card__img"><img src="img/icons/headphones-2.svg" alt="" loading="lazy"></div>
+							<div class="application-card__body">
+								<div class="application-card__title">Служба поддержки 24/7</div>
+								<div class="application-card__text">Наши сотрудники готовы ответить на все ваши вопросы ежедневно по телефону</div>
+							</div>
+						</div>
+						<div class="benefits__item application-card">
+							<div class="application-card__img"><img src="img/icons/reward.svg" alt="" loading="lazy"></div>
+							<div class="application-card__body">
+								<div class="application-card__title">Гарантия качества</div>
+								<div class="application-card__text">Предоставляем длительную гарантию на монтажные работы и установленное оборудование</div>
+							</div>
+						</div>
+						<div class="benefits__item application-card">
+							<div class="application-card__img"><img src="img/icons/eye.svg" alt="" loading="lazy"></div>
+							<div class="application-card__body">
+								<div class="application-card__title">Полная открытость</div>
+								<div class="application-card__text">Прозрачная смета на работы и оборудование, никаких скрытых платежей, различные формы оплаты</div>
+							</div>
+						</div>
+						<div class="benefits__item application-card">
+							<div class="application-card__img"><img src="img/icons/present.svg" alt="" loading="lazy"></div>
+							<div class="application-card__body">
+								<div class="application-card__title">Проект в подарок</div>
+								<div class="application-card__text">При заключении договора с нами, вы сможете получить проект в подарок!</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="request">
+				<div class="request__container">
+					<h2 class="request__title">Оставить заявку</h2>
+
+					<form action="" class="request__form form">
+						<div class="form__row">
+							<div class="col-12 col-md-6">
+								<div class="form__item">
+									<label for="request-type" class="form__label">Тип помещения</label>
+									<select name="form[]" class="select">
+										<option value="" selected>Тип помещения</option>
+										<option value="Квартира">Квартира</option>
+										<option value="Дом">Дом</option>
+										<option value="Офис">Офис</option>
+										<option value="Коммерческое помещение">Коммерческое помещение</option>
+										<option value="Промышленное помещение">Промышленное помещение</option>
+										<option value="Другое">Другое</option>
+									</select>
+								</div>
+								<div class="form__item">
+									<label for="request-area" class="form__label">Площадь</label>
+									<input id="request-area" autocomplete="off" type="text" name="form[]" class="form__input input" placeholder="Площадь помещения">
+								</div>
+								<div class="form__item">
+									<label for="request-phone" class="form__label">Телефон</label>
+									<input id="request-phone" autocomplete="off" type="text" name="form[]" class="form__input form__input_phone input" placeholder="+7 ___ ___ __ __">
+								</div>
+							</div>
+
+							<div class="col-12 col-md-6">
+								<div class="form__item">
+									<div class="form__label">Выберите систему</div>
+
+									<div class="checkbox">
+										<input id="request-system-1" class="checkbox__input" type="checkbox" value="Система вентиляции" name="form[]">
+										<label for="request-system-1" class="checkbox__label">
+											<span class="checkbox__text">Система вентиляции</span>
+											<img src="img/icons/ventilation-2.svg" alt="" loading="lazy">
+										</label>
+									</div>
+
+									<div class="checkbox">
+										<input id="request-system-2" class="checkbox__input" type="checkbox" value="Система кондиционирования" name="form[]">
+										<label for="request-system-2" class="checkbox__label">
+											<span class="checkbox__text">Система кондиционирования</span>
+											<img src="img/icons/weather.svg" alt="" loading="lazy">
+										</label>
+									</div>
+
+									<div class="checkbox">
+										<input id="request-system-3" class="checkbox__input" type="checkbox" value="Система увлажнения воздуха" name="form[]">
+										<label for="request-system-3" class="checkbox__label">
+											<span class="checkbox__text">Система увлажнения воздуха</span>
+											<img src="img/icons/water-drop-2.svg" alt="" loading="lazy">
+										</label>
+									</div>
+
+									<div class="checkbox">
+										<input id="request-system-4" class="checkbox__input" type="checkbox" value="Другая" name="form[]">
+										<label for="request-system-4" class="checkbox__label"> <span class="checkbox__text">Другая</span> </label>
+									</div>
+								</div>
+								<div class="form__item">
+									<div class="file">
+										<div class="file__item">
+											<input id="formImage" accept=".jpg, .png, .gif" type="file" name="image" class="file__input">
+											<div class="file__button _icon-upload">Приложить план помещения</div>
+										</div>
+
+										<div class="file__require">Не обязательно</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form__submit">
+							<div class="form__btn"><button class="btn btn_bg">Отправить</button></div>
+							<div class="form__privacy">Нажимая на кнопку вы соглашайтесь на обработку персональных данных</div>
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<section class="center-text">
+				<div class="center-text__container _content">
+					<h2>О компании</h2>
+					<p> Компания SCS работает на рынке климатических технологий с 2012года. За это время команда «SCS» реализовала множество как государственных, так и коммерческих контрактов по системам вентиляции, кондиционирования, увлажнения воздуха.</p>
+					<p>Команда «SCS» – лучшие специалисты, монтажники и инженеры с опытом работы более чем на 100 объектах! Наиболее важные задачи мы реализуем в кооперации с ведущими инженерами лабораторий по производству климатического оборудования.</p>
+					<p>За 9 лет наша компаниязаняла уверенную позицию среди лидирующих компаний на рынке умных климатических систем. Мы выполняем работу в проектировании, производстве и вводе в эксплуатацию системы «Умный дом», подстраиваясь под каждого клиентаи делая работу комфортной на всех этапах!</p>
+					<p>Наполните свой дом идеальным микроклиматом и улучшите качество своей жизни вместе с SCS!</p>
+				</div>
+			</section>
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

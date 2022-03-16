@@ -2,8 +2,11 @@
 .firstscreen {
     position: relative;
 
+    @media (min-width: $mobile) {
+        min-height: rem(660);
+    }
     @media (max-width: $mobile) {
-        min-height: calc(var(--vh, 1vh) * 100);
+        min-height: calc(var(--vh, 1vh) * 100 - rem(56));
         display: flex;
         align-items: center;
     }
@@ -48,12 +51,16 @@
     &__points {
         @media (min-width: $mobile) {
             position: absolute;
+            min-height: rem(660);
         }
         @media (max-width: $mobile) {
             padding-left: rem(20);
             padding-right: rem(20);
             display: grid;
             row-gap: rem(18);
+        }
+        @media (max-width: $mobileSmall) {
+            width: 100%;
         }
     }
 }
@@ -373,8 +380,11 @@
     // .microclimate__articles
     &__articles {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(rem(280), 1fr));
         @include adaptiveValue("gap", 40, 12);
+
+        @media (min-width: $mobileSmall) {
+            grid-template-columns: repeat(auto-fit, minmax(rem(190), 1fr));
+        }
     }
 
     // .microclimate__article
@@ -407,8 +417,6 @@
     // .microclimate__article-icon
     &__article-icon {
         @include adaptiveValue("max-width", 100, 48);
-        margin-left: auto;
-        margin-right: auto;
 
         &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 140, 36);
@@ -419,10 +427,15 @@
     &__article-title {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+
+        @media (min-width: $tablet) {
+            justify-content: space-between;
+        }
+        @media (max-width: $mobileM) {
+            justify-content: space-between;
+        }
 
         &::after {
-            content: "\e900";
             @extend %ic;
             font-size: rem(24);
             padding: rem(9);
@@ -430,6 +443,13 @@
             border-radius: 50%;
             color: $Green;
             transition: $transition ease border-color, $transition color 0s;
+
+            @media (min-width: $tablet) {
+                content: "\e900";
+            }
+            @media (max-width: $mobileM) {
+                content: "\e900";
+            }
         }
     }
 }
@@ -984,6 +1004,7 @@
             object-fit: contain;
         }
     }
+
     // .application-card__body
     &__body {
         display: grid;
@@ -993,6 +1014,7 @@
             row-gap: rem(8);
         }
     }
+
     // .application-card__title
     &__title {
         font-weight: 600;
@@ -1000,10 +1022,12 @@
         line-height: math.div(21, 18);
         color: $Black2;
     }
+
     // .application-card__text
     &__text {
         color: $DGray;
         @include adaptiveValue("font-size", 14, 12);
+        line-height: math.div(21, 14);
     }
 }
 
@@ -1071,5 +1095,184 @@
                 }
             }
         }
+    }
+}
+
+// benefits ====================================================================================================
+.benefits {
+    @include adaptiveValue("padding-top", 96, 80);
+    @include adaptiveValue("padding-bottom", 130, 80);
+    background-color: $LBlue;
+
+    // .benefits__container
+    &__container {
+    }
+
+    // .benefits__title
+    &__title {
+        text-align: center;
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 80, 48);
+        }
+    }
+
+    // .benefits__items
+    &__items {
+        display: grid;
+        row-gap: rem(80);
+        grid-template-columns: repeat(auto-fill, minmax(rem(260), 1fr));
+        @include adaptiveValue("row-gap", 80, 48);
+        @include adaptiveValue("column-gap", 40, 12);
+
+        @media (min-width: $mobile) {
+            grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+        }
+        @media (max-width: $mobileSmall) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    // .benefits__item
+    &__item {
+        .application-card {
+            // .application-card__img
+            &__img {
+            }
+
+            // .application-card__body
+            &__body {
+                @media (min-width: $mobile) {
+                    max-width: rem(300);
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                @media (max-width: $mobileSmall) {
+                    max-width: rem(300);
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
+            // .application-card__title
+            &__title {
+            }
+
+            // .application-card__text
+            &__text {
+            }
+        }
+    }
+}
+
+// request ====================================================================================================
+.request {
+    @include adaptiveValue("padding-top", 120, 80);
+
+    @media (min-width: $mobileM) {
+        &:not(:last-child) {
+            .request__form {
+                border-bottom: 1px solid $Gray;
+            }
+        }
+    }
+
+    // .request__container
+    &__container {
+    }
+
+    // .request__title
+    &__title {
+        text-align: center;
+        @include adaptiveValue("margin-bottom", 64, 48);
+    }
+
+    // .request__form
+    &__form {
+        @media (min-width: $mobileM) {
+            padding-top: rem(72);
+            padding-bottom: rem(72);
+            border-top: 1px solid $Gray;
+        }
+
+        @media (min-width: $mobile) {
+            .form__row {
+                :first-child {
+                    .form__item {
+                        max-width: rem(360);
+                    }
+                }
+            }
+        }
+
+        .file {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: rem(40);
+            row-gap: rem(8);
+
+            @media (max-width:$mobile){
+                 text-align: center;
+                 flex-direction: column; 
+            }
+        }
+
+        .form__submit {
+            display: grid;
+            row-gap: rem(16);
+
+            @media (min-width: $mobile) {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                column-gap: rem(48);
+                row-gap: rem(16);
+            }
+            @media (max-width: $mobile) {
+                max-width: rem(448);
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .form__btn {
+            flex: 1;
+
+            @media (min-width: $mobile) {
+                max-width: rem(360);
+            }
+        }
+
+        .form__privacy {
+            @include adaptiveValue("font-size", 14, 12);
+            line-height: math.div(21, 14);
+            color: $DGray;
+            max-width: rem(288);
+
+            @media (max-width: $mobile) {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .checkbox {
+            // .checkbox__input
+            &__input {
+            }
+            // .checkbox__label
+            &__label {
+                position: relative;
+            }
+            // .checkbox__text
+            &__text {
+            }
+        }
+    }
+
+    .btn {
+        @include adaptiveValue("padding", 24, 18);
+        width: 100%;
     }
 }

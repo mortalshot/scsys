@@ -1,0 +1,83 @@
+// services ====================================================================================================
+.archive-services {
+    @include adaptiveValue("padding-top", 140, 40, 1440, 992, 1);
+    @include adaptiveValue("padding-bottom", 166, 80, 1440, 992, 1);
+
+    // .archive-services__container
+    &__container {
+    }
+
+    // .archive-services__title
+    &__title {
+        text-align: center;
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 54, 48);
+        }
+    }
+
+    // .archive-services__items
+    &__items {
+        display: grid;
+        @include adaptiveValue("gap", 60, 36, 1440, 992, 1);
+
+        @media (min-width: $mobileM) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    // .archive-services__item
+    &__item {
+    }
+}
+
+.service-item {
+    @media (any-hover: hover) {
+        &:hover {
+            .service-item__img {
+                img {
+                    transition: 5s ease all 0s;
+                    transform: scale(1.25) translateY(-15px);
+                    transform-origin: top;
+                }
+            }
+
+            .service-item__caption {
+                color: $PBlue;
+            }
+        }
+    }
+
+    // .service-item__img
+    &__img {
+        position: relative;
+        padding-bottom: percent(254, 460);
+        border-radius: rem(10);
+        overflow: hidden;
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 24, 12);
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1) translateY(0);
+            transform-origin: 50% 16%;
+            transition: 5s ease all 0s;
+        }
+    }
+
+    // .service-item__caption
+    &__caption {
+        @include adaptiveValue("font-size", 24, 20);
+        line-height: math.div(38, 24);
+        color: $Black;
+        text-align: center;
+        transition: $transition ease color 0s;
+    }
+}

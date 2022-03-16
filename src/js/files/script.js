@@ -12,7 +12,7 @@ if (firstscreen) {
                 const header = document.querySelector('header.header');
                 let headerHeight = header.offsetHeight;
 
-                firstscreen.style.height = window.innerHeight - headerHeight + 'px';
+                firstscreen.style.height = window.innerHeight + 'px';
 
                 const image = document.querySelector('.firstscreen__image img'),
                     imageComputedStyle = window.getComputedStyle(image),
@@ -32,7 +32,7 @@ if (firstscreen) {
                     coordinates.sourceHeight = image.naturalHeight
                     coordinates.sourceX = (image.naturalWidth - coordinates.sourceWidth) * horizontalPercentage
                     coordinates.sourceY = 0
-                    koef = (document.documentElement.clientHeight - headerHeight) / image.naturalHeight
+                    koef = (document.documentElement.clientHeight) / image.naturalHeight
                 } else {
                     coordinates.sourceWidth = image.naturalWidth
                     coordinates.sourceHeight = image.naturalWidth / visibleRatio
@@ -50,12 +50,23 @@ if (firstscreen) {
                 hotPots.style.cssText = style;
             }
 
+            // Добавление отступа к оболочке из-за фиксированной шапки
+            const header = document.querySelector('header.header');
+
+            function setFirstscreeMarginTop() {
+                const headerHeight = header.offsetHeight;
+
+                firstscreen.style.marginTop = -headerHeight + 'px';
+            }
+
             setTimeout(() => {
                 setCoordinates()
+                setFirstscreeMarginTop();
             }, 100);
 
             window.addEventListener('resize', function (event) {
                 setCoordinates()
+                setFirstscreeMarginTop()
             }, true);
 
             document.addEventListener("beforePopupOpen", function (e) {
@@ -119,22 +130,7 @@ if (firstscreen) {
     let firstscreenMmd2 = window.matchMedia('(min-width: 991.98px)');
     function firstscreenHandleMmd2Change(e) {
         if (e.matches) {
-            // Добавление отступа к оболочке из-за фиксированной шапки
-            const header = document.querySelector('header.header');
-
-            function setFirstscreeMarginTop() {
-                const headerHeight = header.offsetHeight;
-
-                firstscreen.style.marginTop = -headerHeight + 'px';
-            }
-
-            setTimeout(() => {
-                setFirstscreeMarginTop();
-            }, 400);
-
-            window.addEventListener('resize', function (event) {
-                setFirstscreeMarginTop()
-            }, true);
+            
         } else {
             firstscreen.style.marginTop = 0 + 'px';
         }

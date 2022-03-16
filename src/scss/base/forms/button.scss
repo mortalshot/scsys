@@ -1,14 +1,45 @@
 //<BUTTONS (a.btn+tab)>
 // Снипет (HTML): btn
 
-.button {
+.btn {
+	font-weight: 700;
 	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
+	align-items: center;
+	justify-content: center;
+	gap: rem(16);
+	text-align: center;
+
+	// .btn_border
+	&_border {
+		color: $Black2;
+		@include adaptiveValue("padding-top", 16, 12);
+		@include adaptiveValue("padding-bottom", 16, 12);
+		@include adaptiveValue("padding-left", 24, 18);
+		@include adaptiveValue("padding-right", 32, 24);
+		border: rem(1) solid $Black2;
+		border-radius: rem(30);
+		transition: $transition ease border-color, $transition color 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $PBlue;
+				border-color: $PBlue;
+			}
 		}
 	}
-	&._fw {
-		width: 100%;
+
+	// .btn_bg
+	&_bg {
+		border-radius: rem(40);
+		background-color: $Green;
+		color: $White;
+		letter-spacing: 0.05em;
+		transition: $transition ease background-color 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $PBlue;
+			}
+		}
 	}
 }

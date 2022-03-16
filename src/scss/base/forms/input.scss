@@ -9,17 +9,37 @@ textarea {
 	appearance: none;
 }
 .input {
-	border-radius: 0 !important;
 	width: 100%;
+	border-radius: rem(30);
 	display: block;
-	padding: 0px 20px;
-	border: 1px solid #eee;
-	&._focus {
+	@include adaptiveValue("padding-top", 16, 12);
+	@include adaptiveValue("padding-bottom", 16, 12);
+	padding-left: rem(24);
+	padding-right: rem(24);
+	border: 1px solid $Gray;
+	outline: 0;
+	font-weight: 600;
+	@include adaptiveValue("font-size", 18, 14);
+	line-height: math.div(22, 18);
+	color: $Black2;
+	transition: $transition ease border-color 0s;
+
+	&::placeholder {
+		transition: $transition ease opacity 0s;
 	}
-	&._error {
+
+	&:focus {
+		&::placeholder {
+			opacity: 0;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		border-color: $PBlue;
 	}
 }
+
 textarea.input {
 	resize: none;
-	padding: 0px 0px;
 }

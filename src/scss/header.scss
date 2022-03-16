@@ -2,45 +2,10 @@
 .header {
 	position: relative;
 	z-index: 1;
+	border-bottom: 1px solid rgba($color: $Black, $alpha: 0.25);
 
-	@media (min-width: $mobile) {
-		border-bottom: 1px solid rgba($color: $Black, $alpha: 0.25);
-	}
-	@media (max-width:$mobile){
-		 height: rem(56); 
-	}
-
-	.home & {
-		@media (min-width: $mobile) {
-			border-color: rgba($color: $White, $alpha: 0.5);
-		}
-		@media (min-width: $mobile) and (max-width: $tablet) {
-			.logo {
-				// .logo__image-dark
-				&__image-dark {
-					display: none;
-				}
-
-				// .logo__image-light
-				&__image-light {
-					display: block;
-				}
-			}
-
-			.icon-menu {
-				&::before,
-				&::after {
-					background-color: $White;
-				}
-
-				.menu-open & {
-					&::before,
-					&::after {
-						background-color: $Black2;
-					}
-				}
-			}
-		}
+	@media (max-width: $mobile) {
+		min-height: rem(56);
 	}
 
 	// .header__container
@@ -83,11 +48,12 @@
 
 		// .logo__image-dark
 		&__image-dark {
+			display: block;
 		}
 
 		// .logo__image-light
 		&__image-light {
-			// display: none;
+			display: none;
 		}
 	}
 
@@ -336,6 +302,52 @@
 			}
 		}
 	}
+
+	.home & {
+		.logo {
+			// .logo__image-dark
+			&__image-dark {
+				display: none;
+			}
+
+			// .logo__image-light
+			&__image-light {
+				display: block;
+			}
+		}
+
+		@media (min-width: $mobile) {
+			border-color: rgba($color: $White, $alpha: 0.5);
+		}
+		@media (min-width: $mobile) and (max-width: $tablet) {
+			.icon-menu {
+				&::before,
+				&::after {
+					background-color: $White;
+				}
+
+				.menu-open & {
+					&::before,
+					&::after {
+						background-color: $Black2;
+					}
+				}
+			}
+		}
+		@media (max-width: $mobile) {
+			.logo {
+				// .logo__image-dark
+				&__image-dark {
+					display: block;
+				}
+
+				// .logo__image-light
+				&__image-light {
+					display: none;
+				}
+			}
+		}
+	}
 }
 
 //Burger
@@ -388,17 +400,18 @@
 	}
 
 	@media (max-width: $mobile) {
-		height: rem(36);
+		@include adaptiveValue("width", 30, 22, 768, 320, 1);
+		height: rem(14);
 
 		&::before,
 		&::after {
 			height: rem(2);
 		}
 		&::before {
-			top: rem(12);
+			top: rem(7);
 		}
 		&::after {
-			bottom: rem(12);
+			bottom: rem(7);
 		}
 
 		.menu-open & {

@@ -16,33 +16,6 @@ h {
     }
 }
 
-.btn {
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: rem(16);
-    text-align: center;
-}
-
-.btn-border {
-    color: $Black2;
-    @include adaptiveValue("padding-top", 16, 12);
-    @include adaptiveValue("padding-bottom", 16, 12);
-    @include adaptiveValue("padding-left", 24, 18);
-    @include adaptiveValue("padding-right", 32, 24);
-    border: 1px solid $Black2;
-    border-radius: rem(30);
-    transition: $transition ease border-color, $transition color 0s;
-
-    @media (any-hover: hover) {
-        &:hover {
-            color: $PBlue;
-            border-color: $PBlue;
-        }
-    }
-}
-
 [data-popup] {
     cursor: pointer;
 }
@@ -54,42 +27,6 @@ h {
 
     @media (min-width: $tablet) {
         margin: rem(-10) rem(-12);
-    }
-}
-
-.col {
-    &-12,
-    &-sm-6,
-    &-md-6,
-    &-lg-6 {
-        width: 100%;
-        min-height: 1px;
-        padding: rem(10) rem(6);
-
-        @media (min-width: $tablet) {
-            padding: rem(10) rem(12);
-        }
-    }
-
-    &-sm-6 {
-        @media screen and (min-width: $mobileM) {
-            flex: 0 0 50%;
-            max-width: 50%;
-        }
-    }
-
-    &-md-6 {
-        @media screen and (min-width: $mobile) {
-            flex: 0 0 50%;
-            max-width: 50%;
-        }
-    }
-
-    &-lg-6 {
-        @media screen and (min-width: $tablet) {
-            flex: 0 0 50%;
-            max-width: 50%;
-        }
     }
 }
 
@@ -112,6 +49,20 @@ img {
     }
     :last-child {
         margin-bottom: 0;
+    }
+}
+
+.logo {
+    a.logo__link {
+        display: block;
+        
+        @media (any-hover: hover) {
+            transition: $transition ease opacity 0s;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
     }
 }
 

@@ -16,6 +16,12 @@
 	}
 }
 
+._icon-check:before {
+	content: "\e914";
+}
+._icon-upload:before {
+	content: "\e913";
+}
 ._icon-close2:before {
 	content: "\e912";
 }
