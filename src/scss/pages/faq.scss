@@ -1,0 +1,32 @@
+// faq ====================================================================================================
+.faq {
+    // .faq__container
+    &__container {
+        max-width: rem(950);
+    }
+
+    // .faq__title
+    &__title {
+        text-align: center;
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 54, 32);
+        }
+    }
+
+    // .faq__spollers
+    &__spollers {
+    }
+}
+
+.spollers {
+    // .spollers__item
+    &__item {
+    }
+    // .spollers__title
+    &__title {
+    }
+    // .spollers__body
+    &__body {
+    }
+}

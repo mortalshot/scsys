@@ -316,25 +316,10 @@
 			}
 		}
 
-		@media (min-width: $mobile) {
+		@media (min-width: $tablet) {
 			border-color: rgba($color: $White, $alpha: 0.5);
 		}
-		@media (min-width: $mobile) and (max-width: $tablet) {
-			.icon-menu {
-				&::before,
-				&::after {
-					background-color: $White;
-				}
-
-				.menu-open & {
-					&::before,
-					&::after {
-						background-color: $Black2;
-					}
-				}
-			}
-		}
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
 			.logo {
 				// .logo__image-dark
 				&__image-dark {

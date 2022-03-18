@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Контакты"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            <section class="contacts">
+                <div class="contacts__container">
+                    <h1 class="contacts__title">Контакты</h1>
+
+                    <div class="contacts__row">
+                        <div class="contacts__body">
+                            <div class="contacts__contact">
+                                <div class="contacts__caption">АДРЕС:</div>
+                                <div class="contacts__address">Приглашаем ознакомится с оборудованием по адресу: Дмитровское шоссе, 46к1, Москва, 127238</div>
+                            </div>
+
+                            <div class="contacts__contact">
+                                <div class="contacts__caption">ТЕЛЕФОН:</div>
+                                <a href="tel:+74951284025" class="contacts__address">+7 (495) 128-40-25</a>
+                            </div>
+
+                            <div class="contacts__contact">
+                                <div class="contacts__caption"> ПОЧТА: </div>
+                                <a href="mailto:info@climatechnologies.ru" class="contacts__address">info@climatechnologies.ru</a>
+                            </div>
+                        </div>
+                        <div class="contacts__map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2240.0739930828!2d37.56921661593403!3d55.84403058057784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b537b36f5aaaab%3A0x594579e16470bff7!2z0JTQvNC40YLRgNC-0LLRgdC60L7QtSDRiC4sIDQ2LCDQnNC-0YHQutCy0LAsIDEyNzIzOA!5e0!3m2!1sru!2sru!4v1647605804438!5m2!1sru!2sru" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

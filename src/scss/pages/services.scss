@@ -1,7 +1,6 @@
 // services ====================================================================================================
 .archive-services {
-    @include adaptiveValue("padding-top", 140, 40, 1440, 992, 1);
-    @include adaptiveValue("padding-bottom", 166, 80, 1440, 992, 1);
+    @include adaptiveValue("padding-top", 54, 48, 1440, 992, 1);
 
     // .archive-services__container
     &__container {
@@ -12,7 +11,7 @@
         text-align: center;
 
         &:not(:last-child) {
-            @include adaptiveValue("margin-bottom", 54, 48);
+            @include adaptiveValue("margin-bottom", 54, 32);
         }
     }
 
@@ -79,5 +78,329 @@
         color: $Black;
         text-align: center;
         transition: $transition ease color 0s;
+    }
+}
+
+// single-service ====================================================================================================
+.single-service {
+    @include adaptiveValue("padding-top", 54, 48, 1440, 992, 1);
+
+    // .single-service__container
+    &__container {
+    }
+
+    // .single-service__title
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 54, 32);
+        }
+
+        @media (min-width: $mobileM) {
+            text-align: center;
+        }
+    }
+
+    // .single-service__row
+    &__row {
+        display: grid;
+        row-gap: rem(24);
+        @include adaptiveValue("column-gap", 100, 20, 1440, 992, 1);
+
+        @media (min-width: $mobile) {
+            grid-template-columns: percent(360, 1160) 1fr;
+        }
+        @media (min-width: $tablet) {
+            grid-template-columns: rem(360) 1fr;
+        }
+    }
+
+    // .single-service__image
+    &__image {
+        border-radius: rem(10);
+        overflow: hidden;
+
+        @media (max-width: $mobile) {
+            position: relative;
+            padding-bottom: percent(340, 688);
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    // .single-service__text
+    &__text {
+        font-weight: 400;
+
+        strong {
+            font-weight: 500;
+        }
+
+        p {
+            @include adaptiveValue("margin-top", 30, 16);
+            @include adaptiveValue("margin-bottom", 30, 16);
+        }
+    }
+}
+
+// service-details ====================================================================================================
+.service-details {
+    @include adaptiveValue("padding-top", 140, 100, 1440, 992, 1);
+
+    // .service-details__container
+    &__container {
+    }
+
+    // .service-details__title
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 80, 48);
+        }
+
+        @media (min-width: $mobileM) {
+            text-align: center;
+        }
+    }
+
+    // .service-details__items
+    &__items {
+        display: grid;
+        @include adaptiveValue("gap", 50, 36);
+
+        @media (min-width: $mobileM) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (min-width: $tablet) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    // .service-details__item
+    &__item {
+    }
+
+    // .service-details__note
+    &__note {
+        font-weight: 400;
+        @include adaptiveValue("font-size", 14, 12);
+        line-height: math.div(22, 14);
+
+        &:not(:first-child) {
+            @include adaptiveValue("margin-top", 54, 36);
+        }
+    }
+}
+
+.details-item {
+    display: grid;
+    align-content: flex-start;
+    @include adaptiveValue("row-gap", 24, 16);
+
+    @media (min-width: $mobileM) {
+        grid-template-rows: rem(48) rem(54) 1fr;
+    }
+
+    // .details-item__icon
+    &__icon {
+        @include adaptiveValue("max-width", 48, 36);
+        position: relative;
+        @include adaptiveValue("padding-bottom", 48, 36);
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    // .details-item__title
+    &__title {
+        font-weight: 600;
+        color: $Black2;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    // .details-item__text
+    &__text {
+        ul {
+            gap: 0;
+        }
+    }
+}
+
+// service-note ====================================================================================================
+.service-note {
+    @include adaptiveValue("padding-top", 80, 40);
+    @include adaptiveValue("padding-bottom", 80, 40);
+    background-color: $LBlue;
+    @include adaptiveValue("margin-top", 140, 100);
+
+    // .service-note__container
+    &__container {
+    }
+
+    // .service-note__text
+    &__text {
+        font-weight: 400;
+        position: relative;
+        color: $Black2;
+
+        @media (min-width: $mobile) {
+            padding-left: rem(40);
+
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: rem(9);
+                background: url(../img/icons/scheme-border.svg) no-repeat center/cover;
+            }
+        }
+
+        p {
+            @include adaptiveValue("margin-top", 30, 16);
+            @include adaptiveValue("margin-bottom", 30, 16);
+        }
+
+        strong {
+            font-weight: 500;
+        }
+    }
+}
+
+// service-features ====================================================================================================
+.service-features {
+    @include adaptiveValue("margin-top", 140, 80, 1440, 768, 1);
+    @include adaptiveValue("padding-top", 140, 80, 1440, 768, 1);
+    @include adaptiveValue("padding-bottom", 140, 80, 1440, 768, 1);
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: $White;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(0deg, rgba(42, 45, 49, 0.8), rgba(42, 45, 49, 0.8));
+        pointer-events: none;
+    }
+
+    // .service-features__container
+    &__container {
+        position: relative;
+        z-index: 1;
+    }
+
+    // .service-features__title
+    &__title {
+        text-align: center;
+        color: $White;
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 100, 48, 1440, 768, 1);
+        }
+    }
+
+    // .service-features__items
+    &__items {
+        display: grid;
+        gap: rem(20);
+
+        @media (min-width: $mobileSmall) {
+            grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+            @include adaptiveValue("gap", 40, 15, 992, 575, 1);
+        }
+        @media (min-width: $tablet) {
+            grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+            @include adaptiveValue("gap", 40, 15, 1440, 992, 1);
+        }
+    }
+
+    // .service-features__item
+    &__item {
+    }
+}
+
+.service-feature {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(rem(10));
+    border-radius: rem(10);
+    @include adaptiveValue("padding-top", 60, 24);
+    @include adaptiveValue("padding-bottom", 40, 24);
+    @include adaptiveValue("padding-left", 20, 10, 1440, 768, 1);
+    @include adaptiveValue("padding-right", 20, 10, 1440, 768, 1);
+    text-align: center;
+    display: grid;
+    align-content: flex-start;
+
+    @media (min-width: $mobileSmall) {
+        grid-template-rows: auto rem(65) 1fr;
+    }
+    @media (min-width: $tablet) {
+        grid-template-rows: auto rem(80) 1fr;
+    }
+
+    // .service-feature__icon
+    &__icon {
+        width: 100%;
+        position: relative;
+        @include adaptiveValue("padding-bottom", 100, 48);
+        @include adaptiveValue("max-width", 100, 48);
+        margin-left: auto;
+        margin-right: auto;
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 56, 36);
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // .service-feature__caption
+    &__caption {
+        font-weight: 600;
+        @include adaptiveValue("font-size", 20, 14);
+        line-height: math.div(24, 20);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 32, 24);
+        }
+    }
+
+    // .service-feature__text
+    &__text {
+        font-weight: 400;
     }
 }

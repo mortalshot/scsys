@@ -5,8 +5,17 @@ import { flsModules } from "./modules.js";
 
 const firstscreen = document.querySelector('.firstscreen');
 if (firstscreen) {
-    let firstscreenMmd3 = window.matchMedia('(min-width: 767.98px)');
+    /* let firstscreenMmd3 = window.matchMedia('(min-width: 767.98px)');
     function firstscreenHandleMmd3Change(e) {
+        if (e.matches) {
+
+        }
+    }
+    firstscreenMmd3.addEventListener('change', firstscreenHandleMmd3Change);
+    firstscreenHandleMmd3Change(firstscreenMmd3); */
+
+    let firstscreenMmd2 = window.matchMedia('(min-width: 991.98px)');
+    function firstscreenHandleMmd2Change(e) {
         if (e.matches) {
             function setCoordinates() {
                 const header = document.querySelector('header.header');
@@ -122,15 +131,7 @@ if (firstscreen) {
                     videoReverse.style.opacity = 0;
                 }, 1000);
             });
-        }
-    }
-    firstscreenMmd3.addEventListener('change', firstscreenHandleMmd3Change);
-    firstscreenHandleMmd3Change(firstscreenMmd3);
 
-    let firstscreenMmd2 = window.matchMedia('(min-width: 991.98px)');
-    function firstscreenHandleMmd2Change(e) {
-        if (e.matches) {
-            
         } else {
             firstscreen.style.marginTop = 0 + 'px';
         }

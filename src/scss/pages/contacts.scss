@@ -1,0 +1,73 @@
+// contacts ====================================================================================================
+.contacts {
+    // .contacts__container
+    &__container {
+    }
+
+    // .contacts__title
+    &__title {
+        text-align: center;
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 54, 32);
+        }
+    }
+
+    // .contacts__row
+    &__row {
+        display: grid;
+        @include adaptiveValue("column-gap", 100, 24, 1440, 992, 1);
+        row-gap: rem(40);
+
+        @media (min-width: $mobile) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    // .contacts__body
+    &__body {
+        display: grid;
+        align-content: flex-start;
+        @include adaptiveValue("row-gap", 24, 16);
+    }
+
+    // .contacts__contact
+    &__contact {
+    }
+
+    // .contacts__caption
+    &__caption {
+        font-weight: 600;
+        @include adaptiveValue("font-size", 20, 15);
+        text-transform: uppercase;
+        color: $Black2;
+    }
+
+    // .contacts__address
+    &__address {
+    }
+
+    a.contacts__address {
+        @media (any-hover: hover) {
+            transition: $transition ease opacity 0s;
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+
+    // .contacts__map
+    &__map {
+        position: relative;
+        padding-bottom: percent(490, 710);
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

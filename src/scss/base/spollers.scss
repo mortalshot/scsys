@@ -6,51 +6,48 @@
 	display: grid;
 	gap: 15px;
 }
+
 // Спойлер
 .spollers__item {
-	font-size: rem(20);
+	border: rem(1) solid $Gray;
+	border-radius: rem(5);
 }
+
 // Заголовок спойлера
 .spollers__title {
 	width: 100%;
 	cursor: default;
+	font-weight: 600;
 	text-align: left;
-	border: 1px solid #eee;
 	padding: rem(10) rem(15);
-	border-radius: rem(5);
 	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	column-gap: rem(20);
+
 	._spoller-init & {
 		cursor: pointer;
-		&::before,
+
 		&::after {
-			content: "";
-			position: absolute;
-			right: 10px;
-			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 15px;
-			transition: transform 0.5s ease 0s;
+			content: "\e912";
+			@extend %ic;
+			font-size: rem(12);
+			transform: rotate(45deg);
+			color: $Gray;
+			transition: $transition ease transform 0s;
 		}
-		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
-		}
-		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
-		}
+
 		&._spoller-active {
-			&::before {
-				transform: translateX(-75%) rotate(-40deg);
-			}
 			&::after {
-				transform: rotate(40deg);
+				transform: rotate(90deg);
 			}
 		}
 	}
 }
+
 // Контент спойлера
 .spollers__body {
-	padding: rem(20);
-	border-radius: rem(5);
-	border: 1px solid #eee;
+	padding: rem(10) rem(20) rem(20);
+	font-weight: 400;
 }
